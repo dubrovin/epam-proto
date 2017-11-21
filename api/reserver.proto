@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package api;
+
+import "model.proto";
+
+message ReserveProductRequest {
+    string product_hash = 1;
+}
+message ReserveProductResponse {
+    Product product = 1;
+    ResponseData response = 2;
+}
+
+message AcceptProductRequest {
+    string product_hash = 1;
+}
+message AcceptProductResponse {
+    Product product = 1;
+    ResponseData response = 2;
+}
+
+// ReserverAPI -
+service ReserverAPI {
+
+    // ReserveProduct -
+    rpc ReserveProduct (ReserveProductRequest) returns (ReserveProductResponse) {
+    }
+    // AcceptProduct -
+    rpc AcceptProduct (AcceptProductRequest) returns (AcceptProductResponse) {
+    }
+
+}

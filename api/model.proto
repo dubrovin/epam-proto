@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package api;
+
+message ResponseData {
+
+    enum ResponseStatusEnum {
+        SUCCESS = 0;
+        FAILED = 1;
+    }
+
+    string message = 1;
+    ResponseStatusEnum status = 2;
+
+}
+
+
+// Product - product structre
+message Product {
+
+    enum ResetApprovePassword {
+        AVAILABLE = 0;
+        BOOKED = 1;
+        ACCEPTED = 2;
+    }
+
+    int64 id = 1;
+    string name = 2;
+    ResetApprovePassword status = 3;
+    string hash = 4;
+}

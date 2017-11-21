@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package api;
+
+import "model.proto";
+
+message GetProductsRequest {}
+message GetProductsResponse {
+    repeated Product products = 1;
+    ResponseData response = 2;
+}
+
+// WatcherAPI -
+service WatcherAPI {
+
+    // GetProducts
+    rpc GetProducts (GetProductsRequest) returns (GetProductsResponse) {
+    }
+
+}
